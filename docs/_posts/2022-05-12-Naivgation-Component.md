@@ -14,18 +14,18 @@ Gradle:
 Add a `FragmentContainerView` to activity layout:
 ``` xml
 <androidx.fragment.app.FragmentContainerView
-	android:id="@+id/nav_host_fragment"
-	android:layout_width="0dp"
-	android:layout_height="0dp"
-	app:defaultNavHost="true"
-	app:navGraph="@navigation/nav_graph" />
+    android:id="@+id/nav_host_fragment"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph" />
 ```
 
 Setup `NavController` in activity's `onCreate()`:
 ``` kotlin
 val navHostFragment =
-	supportFragmentManager
-	.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+    supportFragmentManager
+    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 navController = navHostFragment.navController
 ```
 
@@ -39,12 +39,12 @@ You could still pass other types such as `Double` or custom types via Bundle, th
 Navigating to a destination:
 ``` kotlin
 val action = FirstFragmentDirections
-	.actionNameFragmentToGreetingFragment(
-			"Marco",
-			21
-	)
+    .actionNameFragmentToGreetingFragment(
+            "Marco",
+            21
+    )
 )
-	findNavController().navigate(action)
+    findNavController().navigate(action)
 }
 ```
 
@@ -53,8 +53,8 @@ Get NavArgs:
 val args: GreetingFragmentArgs by navArgs()
 
 fun greet() {
-	val name = args.name
-	val age = args.age
+    val name = args.name
+    val age = args.age
 }
 ```
 
@@ -65,27 +65,27 @@ NavGraph starts fragments/activities for you, that's great in most cases, but in
 2. `setGraph(graph: NavGraph!, startDestinationArgs: Bundle?)` is the function designed to solve this exact problem. Just build a bundle from the activity, pass the bundle as an argument, then read the bundle in the fragment:
 ``` kotlin
 this.arguments?.let {
-	binding.textview.text = it.getString("key") ?: "null"
+    binding.textview.text = it.getString("key") ?: "null"
 }
 ```
 
 ## [Scoping ViewModel to a NavGraph](https://developer.android.com/guide/navigation/navigation-programmatic#share_ui-related_data_between_destinations_with_viewmodel) (or a nested graph)
 ``` kotlin
 val viewModel: SignupFlowViewModel by
-	navGraphViewModels(R.id.sign_up_graph)
+    navGraphViewModels(R.id.sign_up_graph)
 ```
 
 ## [Navigation in multi-module apps](https://developer.android.com/guide/navigation/navigation-multi-module)
 Include destinations with the `<include>` tag:
 ``` xml
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/nav_graph"
-	app:startDestination="@id/list_nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/list_nav_graph">
 
-	<include app:graph="@navigation/list_navigation" />
-	<include app:graph="@navigation/favorites_navigation" />
-	<include app:graph="@navigation/settings_navigation" />
+    <include app:graph="@navigation/list_navigation" />
+    <include app:graph="@navigation/favorites_navigation" />
+    <include app:graph="@navigation/settings_navigation" />
 </navigation>
 ```
