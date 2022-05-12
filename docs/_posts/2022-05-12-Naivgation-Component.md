@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Navigation Component"
-date: 2022-05-12 14:07:00 -0000
 categories: Android
 ---
 
