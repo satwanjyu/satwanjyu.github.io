@@ -26,7 +26,7 @@ val navHostFragment =
 navController = navHostFragment.navController
 ```
 
-Important: `FragmentContainerView` can't be setup with  `findNavController`. See: [findNavController() fails in onCreate when NavHostFragment is inflated with FragmentContainerView](https://issuetracker.google.com/issues/142847973)
+Important: `FragmentContainerView` can't be setup with  `findNavController`. See: [Google Issue Tracker: findNavController() fails in onCreate when NavHostFragment is inflated with FragmentContainerView](https://issuetracker.google.com/issues/142847973)
 
 ## SafeArgs
 SafeArgs don't support types that are not supported formats of Android XML values. Basically, we're stuck with `Int`, `Float`, `Boolean`, `String` as well as their nullables and arrays.
@@ -67,7 +67,7 @@ this.arguments?.let {
 ```
 
 ## Scoping ViewModel to a NavGraph (or a nested graph)
-https://developer.android.com/guide/navigation/navigation-programmatic#share_ui-related_data_between_destinations_with_viewmodel 
+<https://developer.android.com/guide/navigation/navigation-programmatic#share_ui-related_data_between_destinations_with_viewmodel>
 
 ``` kotlin
 val viewModel: SignupFlowViewModel by
@@ -75,7 +75,7 @@ val viewModel: SignupFlowViewModel by
 ```
 
 ## Navigation in multi-module apps
-https://developer.android.com/guide/navigation/navigation-multi-module
+<https://developer.android.com/guide/navigation/navigation-multi-module>
 
 Include destinations with the `<include>` tag:
 ``` xml
