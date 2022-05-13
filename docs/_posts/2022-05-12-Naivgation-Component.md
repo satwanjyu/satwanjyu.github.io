@@ -3,7 +3,6 @@ layout: post
 categories: Android
 ---
 
-# Navigation Component
 ## Setup
 Gradle:
 - Navigation component: https://developer.android.com/guide/navigation/navigation-getting-started#Set-up
