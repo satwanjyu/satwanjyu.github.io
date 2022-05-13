@@ -5,8 +5,8 @@ categories: Android
 
 ## Setup
 Gradle:
-- Navigation component: https://developer.android.com/guide/navigation/navigation-getting-started#Set-up
-- SafeArgs: https://developer.android.com/guide/navigation/navigation-pass-data#Safe-args
+- [Navigation component](https://developer.android.com/guide/navigation/navigation-getting-started#Set-up)
+- [SafeArgs](https://developer.android.com/guide/navigation/navigation-pass-data#Safe-args)
 
 Add a `FragmentContainerView` to activity layout:
 ``` xml
@@ -66,13 +66,17 @@ this.arguments?.let {
 }
 ```
 
-## [Scoping ViewModel to a NavGraph](https://developer.android.com/guide/navigation/navigation-programmatic#share_ui-related_data_between_destinations_with_viewmodel) (or a nested graph)
+## Scoping ViewModel to a NavGraph (or a nested graph)
+https://developer.android.com/guide/navigation/navigation-programmatic#share_ui-related_data_between_destinations_with_viewmodel 
+
 ``` kotlin
 val viewModel: SignupFlowViewModel by
     navGraphViewModels(R.id.sign_up_graph)
 ```
 
-## [Navigation in multi-module apps](https://developer.android.com/guide/navigation/navigation-multi-module)
+## Navigation in multi-module apps
+https://developer.android.com/guide/navigation/navigation-multi-module
+
 Include destinations with the `<include>` tag:
 ``` xml
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
