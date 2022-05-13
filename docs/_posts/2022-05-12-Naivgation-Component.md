@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "Navigation Component"
 categories: Android
 ---
 
